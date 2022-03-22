@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.react.portfolio_project.dao.IPortfolioDAO">
+
+    <!-- 전체 포트폴리오 조회 (회원 전용) -->
+    <select id="getAllPortfolio" resultType="com.react.portfolio_project.model.PortfolioVO" parameterType="string">
+        select * from portfolio p, stack s where p.portStackNo = s.stackNo order by portNo desc
+    </select>
+
+    <!-- 포트폴리오 작성 -->
+    <insert id="insertPortfolio" parameterType="com.react.portfolio_project.model.PortfolioVO">
+        insert into portfolio (memId, portStackNo, portNo, portTitle, portSubTitle, gitLink, portDetails)
+        values (#{memId}, #{portStackNo}, #{portNo}, #{portTitle}, #{portSubTitle}, #{gitLink}, #{portDetails})
+    </insert>
+
+
+</mapper>
