@@ -6,8 +6,8 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -64,19 +64,19 @@ public class MemberController {
 
 	}
 	
-	@ResponseBody
-	@RequestMapping(value = "/idcheck")
-	public String idCheck(@RequestParam String id) {
+	
+	@RequestMapping(value = "/idcheck/{id}")
+	public String idCheck(@PathVariable String id) {
 
 		System.out.println(id);
 
-		String checkVar = "no_use";
+		String checkVar = "use";
 
 		String memId_result = service.memIdCheck(id);
 		
 		if(memId_result != null) {
 
-			checkVar = "use";
+			checkVar = "no_use";
 		}
 		return checkVar;
 	}
