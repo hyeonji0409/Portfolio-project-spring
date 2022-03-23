@@ -59,9 +59,9 @@ public class MemberController {
 	public void logout(HttpSession session) {
 		
 		// DB에서 아이디 패스워드 확인
-
+		System.out.println("로그아웃");
 		session.invalidate();
-
+	
 	}
 	
 	
