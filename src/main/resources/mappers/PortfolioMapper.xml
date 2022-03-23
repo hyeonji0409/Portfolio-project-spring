@@ -17,5 +17,8 @@
         values (#{memId}, #{portStackNo}, #{portNo}, #{portTitle}, #{portSubTitle}, #{gitLink}, #{portDetails})
     </insert>
 
-
+    <!-- 포트폴리오 상세정보 조회 -->
+    <select id="portfolioDetailView" parameterType="string" resultType="com.react.portfolio_project.model.PortfolioVO">
+        select * from portfolio where portNo = #{portNo}
+    </select>
 </mapper>

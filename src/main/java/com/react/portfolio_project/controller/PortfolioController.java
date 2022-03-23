@@ -4,6 +4,7 @@ import com.react.portfolio_project.model.PortfolioVO;
 import com.react.portfolio_project.service.PortfolioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,5 +29,10 @@ public class PortfolioController {
     @RequestMapping("/insertPortfolio")
     public void insertPortfolio(PortfolioVO portfolioVO){
         portfolioService.insertPortfolio(portfolioVO);
+    }
+
+    @RequestMapping("/detailPortfolio/{portNo}")
+    public void detailPortfolio(@PathVariable int portNo){
+        portfolioService.portfolioDetailView(portNo);
     }
 }

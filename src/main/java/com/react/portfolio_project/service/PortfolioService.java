@@ -21,4 +21,9 @@ public class PortfolioService implements IPortfolioService{
     public void insertPortfolio(PortfolioVO portfolioVo) {
         dao.insertPortfolio(portfolioVo);
     }
+
+    @Override
+    public PortfolioVO portfolioDetailView(int portNo) {
+        return dao.portfolioDetailView(portNo);
+    }
 }
