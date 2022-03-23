@@ -39,4 +39,9 @@ public class PortfolioController {
     public void insertPortfolio(PortfolioVO portfolioVO){
         portfolioService.insertPortfolio(portfolioVO);
     }
+
+    @RequestMapping("/detailPortfolio/{portNo}")
+    public void detailPortfolio(@PathVariable int portNo){
+        portfolioService.portfolioDetailView(portNo);
+    }
 }
