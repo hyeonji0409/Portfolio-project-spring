@@ -13,8 +13,8 @@ public class PortfolioService implements IPortfolioService{
     IPortfolioDAO dao;
 
     @Override
-    public ArrayList<PortfolioVO> getAllPortfolio() {
-        return dao.getAllPortfolio();
+    public ArrayList<PortfolioVO> getAllPortfolio(String memId) {
+        return dao.getAllPortfolio(memId);
     }
 
     @Override

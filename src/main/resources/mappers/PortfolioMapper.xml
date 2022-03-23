@@ -8,9 +8,14 @@
 
     <!-- 전체 포트폴리오 조회 (회원 전용) -->
     <select id="getAllPortfolio" resultType="com.react.portfolio_project.model.PortfolioVO" parameterType="string">
-        select * from portfolio p, stack s where p.portStackNo = s.stackNo order by portNo desc
+        select * from portfolio p, stack s where p.portStackNo = s.stackNo and p.memId=#{memId}
     </select>
-
+	
+	
+	<select id="getAllPortfolio1" resultType="com.react.portfolio_project.model.PortfolioVO" parameterType="string">
+        select * from portfolio p, stack s where p.portStackNo = s.stackNo and p.memId=#{memId}
+    </select>
+    
     <!-- 포트폴리오 작성 -->
     <insert id="insertPortfolio" parameterType="com.react.portfolio_project.model.PortfolioVO">
         insert into portfolio (memId, portStackNo, portNo, portTitle, portSubTitle, gitLink, portDetails)

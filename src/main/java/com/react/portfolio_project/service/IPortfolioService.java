@@ -7,6 +7,6 @@ import java.util.ArrayList;
 
 @Service
 public interface IPortfolioService {
-    public ArrayList<PortfolioVO> getAllPortfolio(); // 전체 포트폴리오 조회
+    public ArrayList<PortfolioVO> getAllPortfolio(String memId); // 전체 포트폴리오 조회
     void insertPortfolio(PortfolioVO portfolioVo); // 포트폴리오 등록
 }
