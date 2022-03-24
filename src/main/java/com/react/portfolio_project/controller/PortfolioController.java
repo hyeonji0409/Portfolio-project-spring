@@ -3,6 +3,7 @@ package com.react.portfolio_project.controller;
 import java.util.HashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -40,8 +41,9 @@ public class PortfolioController {
         portfolioService.insertPortfolio(portfolioVO);
     }
 
-    @RequestMapping("/detailPortfolio/{portNo}")
-    public void detailPortfolio(@PathVariable int portNo){
-        portfolioService.portfolioDetailView(portNo);
+    @RequestMapping("/portfolioDetailView/{portNo}")
+    public PortfolioVO portfolioDetailView(@PathVariable int portNo){
+        System.out.println(portfolioService.portfolioDetailView(portNo));
+        return portfolioService.portfolioDetailView(portNo);
     }
 }

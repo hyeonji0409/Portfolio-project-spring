@@ -26,4 +26,6 @@ public class PortfolioService implements IPortfolioService{
     public PortfolioVO portfolioDetailView(int portNo) {
         return dao.portfolioDetailView(portNo);
     }
+
+
 }

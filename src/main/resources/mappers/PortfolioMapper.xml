@@ -18,12 +18,12 @@
     
     <!-- 포트폴리오 작성 -->
     <insert id="insertPortfolio" parameterType="com.react.portfolio_project.model.PortfolioVO">
-        insert into portfolio (memId, portStackNo, portNo, portTitle, portSubTitle, gitLink, portDetails)
-        values (#{memId}, #{portStackNo}, #{portNo}, #{portTitle}, #{portSubTitle}, #{gitLink}, #{portDetails})
+        insert into portfolio (memId, portStackNo, portNo, portTitle, portSubTitle, gitLink, portDetails, portImages)
+        values (#{memId}, #{portStackNo}, #{portNo}, #{portTitle}, #{portSubTitle}, #{gitLink}, #{portDetails}, #{portImages})
     </insert>
 
     <!-- 포트폴리오 상세정보 조회 -->
-    <select id="portfolioDetailView" parameterType="string" resultType="com.react.portfolio_project.model.PortfolioVO">
-        select * from portfolio where portNo = #{portNo}
+    <select id="portfolioDetailView" resultType="com.react.portfolio_project.model.PortfolioVO" parameterType="int">
+        select * from portfolio p, stack s where p.portStackNo = s.stackNo and p.portNo=#{portNo}
     </select>
 </mapper>
