@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.react.portfolio_project.dao.IScheduleDAO">
+  		<resultMap id="scdResult" type="com.react.portfolio_project.model.ScheduleVO">
+			<result property="NO" column="NO" />
+	        <result property="ID" column="ID" />
+	        <result property="NOW" column="NOW" />
+		</resultMap> 
+		
+  		<!--  전체 스케줄 조회 -->
+	  	<select id="ScheduleList" resultMap="scdResult">	  	  		
+				SELECT * FROM Schedule 
+		</select>
+
+		<!-- 스케줄 등록 -->
+		<insert id="insertSchedule" parameterType="com.react.portfolio_project.model.ScheduleVO">
+			INSERT INTO Schedule (ID, NOW)
+			VALUES (#{ID}, #{NOW})
+		</insert>
+		
+		<!-- 스케줄 상세 정보 조회 -->
+		<select id="ScheduleDeailView" parameterType="string"
+					  resultType="com.react.portfolio_project.model.ScheduleVO">
+			SELECT * FROM Schedule WHERE NO= #{NO} 		
+		</select>
+
+		<!-- 상품 정보 수정 -->
+		<update id="updateSchedule" parameterType="com.react.portfolio_project.model.ScheduleVO">
+			UPDATE Schedule 
+			SET NO=#{NO}, ID=#{ID}, NOW=#{NOW} 
+					
+			WHERE NO=#{NO}
+		</update>		
+		
+		<!-- 스케줄 삭제 -->
+		<delete id="deleteSchedule"  parameterType="string">
+			DELETE FROM Schedule WHERE NO=#{NO} 
+		</delete>	
+		
+   </mapper>
+   
+   
+   

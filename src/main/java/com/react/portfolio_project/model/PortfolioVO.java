@@ -9,12 +9,13 @@ public class PortfolioVO {
     private String portSubTitle;
     private String gitLink;
     private String portDetails;
+    private String portImages;
 
     // stack Data
     private int stackNo;
     private String stackName;
 
-    public PortfolioVO(String memId, int portStackNo, int portNo, String portTitle, String portSubTitle, String gitLink, String portDetails, int stackNo, String stackName) {
+    public PortfolioVO(String memId, int portStackNo, int portNo, String portTitle, String portSubTitle, String gitLink, String portDetails, String portImages, int stackNo, String stackName) {
         super();
         this.memId = memId;
         this.portStackNo = portStackNo;
@@ -23,16 +24,9 @@ public class PortfolioVO {
         this.portSubTitle = portSubTitle;
         this.gitLink = gitLink;
         this.portDetails = portDetails;
+        this.portImages = portImages;
         this.stackNo = stackNo;
         this.stackName = stackName;
-    }
-
-    public String getMemNo() {
-        return memId;
-    }
-
-    public void setMemNo(String memId) {
-        this.memId = memId;
     }
 
     public int getPortStackNo() {
@@ -99,6 +93,22 @@ public class PortfolioVO {
         this.stackName = stackName;
     }
 
+    public String getMemId() {
+        return memId;
+    }
+
+    public void setMemId(String memId) {
+        this.memId = memId;
+    }
+
+    public String getPortImages() {
+        return portImages;
+    }
+
+    public void setPortImages(String portImages) {
+        this.portImages = portImages;
+    }
+
     @Override
     public String toString() {
         return "PortfolioVO{" +
@@ -109,6 +119,7 @@ public class PortfolioVO {
                 ", portSubTitle='" + portSubTitle + '\'' +
                 ", gitLink='" + gitLink + '\'' +
                 ", portDetails='" + portDetails + '\'' +
+                ", portImages='" + portImages + '\'' +
                 ", stackNo=" + stackNo +
                 ", stackName='" + stackName + '\'' +
                 '}';

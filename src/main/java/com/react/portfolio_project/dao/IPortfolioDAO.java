@@ -7,5 +7,5 @@ import java.util.ArrayList;
 public interface IPortfolioDAO {
     public ArrayList<PortfolioVO> getAllPortfolio(String memId); // 전체 포트폴리오 조회
     void insertPortfolio(PortfolioVO portfolioVo); // 포트폴리오 등록
-    PortfolioVO portfolioDetailView(int portNo); // 포트폴리오 상세 정보 조회
+    public PortfolioVO portfolioDetailView(int portNo); // 포트폴리오 상세 정보 조회
 }

@@ -42,7 +42,6 @@
         order by memId desc
     </select>
 
-    
 
     <select id="getMember" resultType="com.react.portfolio_project.model.MemberVO" parameterType="string">
        	select * from member WHERE memId=#{memId}
