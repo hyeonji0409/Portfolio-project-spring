@@ -46,4 +46,10 @@ public class PortfolioController {
         System.out.println(portfolioService.portfolioDetailView(portNo));
         return portfolioService.portfolioDetailView(portNo);
     }
+
+    // delete
+    @RequestMapping("/deletePortfolio/{portNo}")
+    public void deletePortfolio(@PathVariable int portNo){
+        portfolioService.deletePortfolio(portNo);
+    }
 }

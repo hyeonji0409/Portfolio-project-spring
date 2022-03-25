@@ -15,6 +15,20 @@ public class PortfolioVO {
     private int stackNo;
     private String stackName;
 
+    public PortfolioVO(){}
+
+    public PortfolioVO(String memId, int portStackNo, int portNo, String portTitle, String portSubTitle, String gitLink, String portDetails, String portImages){
+        super();
+        this.memId = memId;
+        this.portStackNo = portStackNo;
+        this.portNo = portNo;
+        this.portTitle = portTitle;
+        this.portSubTitle = portSubTitle;
+        this.gitLink = gitLink;
+        this.portDetails = portDetails;
+        this.portImages = portImages;
+    }
+
     public PortfolioVO(String memId, int portStackNo, int portNo, String portTitle, String portSubTitle, String gitLink, String portDetails, String portImages, int stackNo, String stackName) {
         super();
         this.memId = memId;

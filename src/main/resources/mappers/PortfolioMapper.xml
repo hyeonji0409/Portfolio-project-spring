@@ -26,4 +26,8 @@
     <select id="portfolioDetailView" resultType="com.react.portfolio_project.model.PortfolioVO" parameterType="int">
         select * from portfolio p, stack s where p.portStackNo = s.stackNo and p.portNo=#{portNo}
     </select>
+
+    <delete id="deletePortfolio" parameterType="int">
+        delete  from portfolio where portNo = #{portNo}
+    </delete>
 </mapper>

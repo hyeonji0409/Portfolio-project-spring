@@ -27,5 +27,10 @@ public class PortfolioService implements IPortfolioService{
         return dao.portfolioDetailView(portNo);
     }
 
+    @Override
+    public void deletePortfolio(int portNo) {
+        dao.deletePortfolio(portNo);
+    }
+
 
 }
