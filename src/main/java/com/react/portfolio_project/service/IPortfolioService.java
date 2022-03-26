@@ -10,4 +10,6 @@ public interface IPortfolioService {
     public ArrayList<PortfolioVO> getAllPortfolio(String memId); // 전체 포트폴리오 조회
     void insertPortfolio(PortfolioVO portfolioVo); // 포트폴리오 등록
     public PortfolioVO portfolioDetailView(int portNo); // 포트폴리오 상세 정보 조회
+    void deletePortfolio(int portNo); // 삭제
+    void updatePortfolio(PortfolioVO portfolioVo); // 포트폴리오 등록
 }
