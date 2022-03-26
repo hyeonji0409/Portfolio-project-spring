@@ -28,6 +28,14 @@
     </select>
 
     <delete id="deletePortfolio" parameterType="int">
-        delete  from portfolio where portNo = #{portNo}
+        delete from portfolio where portNo = #{portNo}
     </delete>
+
+    <!-- 수정 -->
+    <update id="updatePortfolio" parameterType="com.react.portfolio_project.model.PortfolioVO">
+        update portfolio
+        set memId = #{memId}, portStackNo = #{portStackNo}, portNo = #{portNo}, portTitle = #{portTitle},
+            portSubTitle = #{portSubTitle}, gitLink = #{gitLink}, portDetails = #{portDetails}, portImages = #{portImages}
+        where portNo = #{portNo}
+    </update>
 </mapper>

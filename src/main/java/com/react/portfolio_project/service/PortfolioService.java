@@ -32,5 +32,10 @@ public class PortfolioService implements IPortfolioService{
         dao.deletePortfolio(portNo);
     }
 
+    @Override
+    public void updatePortfolio(PortfolioVO portfolioVo) {
+        dao.updatePortfolio(portfolioVo);
+    }
+
 
 }
